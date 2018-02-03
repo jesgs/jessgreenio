@@ -1,0 +1,412 @@
+/**
+ * @section Portfolio
+ * @page Portfolio
+ */
+/**
+ * Images used in styleguide
+ *
+ * @section Images
+ * @sectionof Portfolio
+ * @example
+ * <p>
+ * <strong>Logo and mobile ui chrome</strong><br />
+ * <img title="Logo/Brand mark" height="100" width="100" src="../assets/images/logo.png" style="padding: 5px; background-color: #333; vertical-align: top;" />
+ * <img title="Mobile Menu open icon" height="32" width="32" src="../assets/images/mobile-menu-open.png" style="padding: 5px; background-color: #333; vertical-align: top;" />
+ * <img title="Mobile Menu close icon" height="32" width="32" src="../assets/images/mobile-menu-close.png" style="padding: 5px; background-color: #333; vertical-align: top;" />
+ * </p>
+ * <p>
+ * <strong>Browser UI elements used as flair for portfolio images</strong><br />
+ * <img width="280" height="auto" title="Small Browser UI -- used on home page" src="../assets/images/browser-ui-small.png" style="padding: 5px; background-color: #fff; vertical-align: top;" />
+ * <img width="560" height="auto" title="Large Browser UI -- used on details page -- not implemented" src="../assets/images/browser-ui-large.png" style="padding: 5px; background-color: #fff; vertical-align: top;" />
+ * </p>
+ * <p>
+ * <strong>Lead section illustration and gradient background (see Colors)</strong>
+ * <img class="gradient" width="100%" height="auto" title="Sunny Day" src="../assets/images/weather-sunny.png" />
+ * </p>
+ * @code
+ */
+.menu {
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    cursor: pointer;
+    background: {
+        size: contain;
+        repeat: no-repeat;
+        position: center center;
+    }
+
+    position: absolute;
+    margin-top: -22.5px;
+    top: 50%;
+    left: 10px;
+
+    &--open {
+        background: {
+            image: url("../../images/mobile-menu-open.png");
+        }
+    }
+
+    &--close {
+        background: {
+            size: 34px 34px;
+            image: url("../../images/mobile-menu-close.png");
+        }
+    }
+}
+
+.nav-header {
+    @include box-sizing(border-box);
+    background-color: $header-bg-color;
+    @include media-md-min {
+        height: 120px;
+    }
+
+    padding: {
+        top: 15px;
+        bottom: 15px;
+    }
+    margin-bottom: 0;
+    nav {
+        line-height: 1;
+        height: 90px;
+        position: relative;
+
+        @include media-md-min {
+            height: 80px;
+        }
+    }
+
+    &__nav-bar {
+        display: none;
+        position: relative;
+        top: 50%;
+        font-size: $font-size-base;
+        a {
+            &:link,
+            &:visited {
+                color: $header-link-color;
+            }
+        }
+
+        @include media-md-min {
+            display: block;
+            transform: perspective(1px) translateY(-50%);
+        }
+
+        @include media-sm-max {
+            &--open {
+                display: block;
+                position: absolute;
+                left: -15px;
+                top: 105px;
+                width: 100%;
+                background-color: $header-bg-color;
+                padding: 15px;
+                z-index: 999;
+                text-align: center;
+                font-size: 6vw;
+                line-height: 14vw;
+            }
+        }
+
+        > li {
+            display: block;
+
+            @include media-md-min {
+                display: inline-block;
+                width: percentage($medium-screen-min / $columns * 1 / $medium-screen-min);
+            }
+        }
+    }
+}
+
+.nav-footer {
+    background-color: $header-bg-color;
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 0;
+
+    nav {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-right: 15px;
+        a {
+            &:link,
+            &:visited {
+                color: $header-link-color;
+            }
+        }
+    }
+}
+
+.logo {
+    background: {
+        image: url("../../images/logo.png");
+        size: contain;
+    }
+    height: 90px;
+    width: 90px;
+    margin: 0;
+    a {
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+
+    @include media-md-min {
+        height: 90px;
+        width: 90px;
+    }
+
+    .nav-footer & {
+        margin-bottom: 0;
+        margin-top: $vertical-spacing;
+    }
+}
+
+.weather-sunny {
+    height: 200px;
+
+    @include media-sm-min {
+        height: 400px;
+    }
+
+    background: {
+        image: url("../../images/weather-sunny.png");
+        repeat: no-repeat;
+        position: bottom center;
+        size: contain;
+    }
+}
+
+.gradient {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fdea32+0,008fc5+100&0.25+0,0.25+100 */
+    background: -moz-linear-gradient(top, $gradient-color-stop-1 0%, rgba(0, 143, 197, 0.25) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, $gradient-color-stop-1 0%, rgba(0, 143, 197, 0.25) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, $gradient-color-stop-1 0%, rgba(0, 143, 197, 0.25) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#40fdea32', endColorstr='#40008fc5', GradientType=0); /* IE6-9 */
+}
+
+/**
+ * Lead section is located in the header. Consists of a heading and a background image
+ * @section Lead
+ * @sectionof Portfolio
+ */
+.lead {
+    text-align: center;
+
+    &__header {
+        line-height: 1;
+        font: {
+            family: $logo-font;
+            size: 15vw;
+        }
+        padding-top: $vertical-spacing * 2;
+        margin-bottom: $vertical-spacing * 2;
+
+        @include media-md-min {
+            font-size: $font-size-xxl * 2;
+        }
+    }
+
+    &__fname {
+        color: $color-accent-04;
+    }
+
+    &__text {
+        font-size: $font-size-base;
+    }
+}
+
+/**
+ * Portfolio block object
+ * @section Portfolio Object
+ * @sectionof Portfolio
+ */
+.portfolio {
+    margin-bottom: 0;
+
+    &__item {
+        background-color: $color-base-2;
+        text-align: center;
+        padding: ($vertical-spacing * 2) 0;
+
+        &__title {
+            color: darken($color-accent-06, 25);
+            font-size: $font-size-base * 1.125;
+        }
+
+        &__description {
+            font-size: $font-size-base;
+            padding: 0 15px;
+            &--details {
+                text-align: left;
+            }
+            p {
+                padding-bottom: 5px;
+            }
+            ul {
+                padding-left: 20px;
+                list-style-type: disc;
+                li {
+                    padding-bottom: 5px
+                }
+            }
+
+            @include media-md-min {
+                padding: 0;
+            }
+        }
+
+        &__btn {
+            background-color: $color-accent-06;
+            font-family: $header-font;
+            text-align: center;
+            display: inline-block;
+            width: 180px;
+            padding: 10.5px 0;
+            border-radius: 24px;
+            font-size: $font-size-base;
+
+            &:link {
+                color: darken($color-accent-06, 25);
+            }
+
+            &:visited {
+                color: darken($color-accent-06, 15);
+            }
+
+            &:hover {
+                text-decoration: none;
+                background-color: $color-accent-08;
+                color: darken($color-accent-08, 25);
+            }
+
+            &--alt {
+                background-color: $color-accent-08;
+
+                &:link {
+                    color: darken($color-accent-08, 25);
+                }
+
+                &:visited {
+                    color: darken($color-accent-08, 15);
+                }
+
+                &:hover {
+                    text-decoration: none;
+                    background-color: $color-accent-06;
+                    color: darken($color-accent-06, 25);
+                }
+            }
+
+            &--disabled {
+                background-color: $color-base-01;
+
+                &:link, &:visited {
+                    color: $color-base-0;
+                }
+
+                &:hover, &:active {
+                    text-decoration: none;
+                    background-color: $color-base-0;
+                    color: $color-base-01
+                }
+            }
+        }
+
+        &--alt {
+            background-color: transparent;
+        }
+
+        .browser-ui {
+            background: {
+                image: url('../../images/browser-ui-small.png');
+                size: contain;
+                repeat: no-repeat;
+            }
+            width: 320px;
+            height: 228px;
+            margin: 0 auto;
+            position: relative;
+
+            @include media-sm-min {
+                width: 400px;
+                height: 285px;
+            }
+
+            img {
+                margin: 0 auto;
+                position: absolute;
+                left: 8px;
+                top: 40px;
+                width: 96%;
+
+                @include media-sm-min {
+                    left: 8px;
+                    top: 50px;
+                }
+            }
+
+            &-small {
+                margin-left: auto;
+                margin-right: auto;
+                width: 90%;
+                @include media-sm-min {
+                    width: 400px;
+                }
+
+                &__top, &__bottom {
+                    display: block;
+                }
+
+                &__middle {
+                    width: 100%;
+                    background: {
+                        image: url('../../images/browser-ui-large_middle.png');
+                        size: contain;
+                        repeat: repeat;
+                    }
+
+                    video, img {
+                        width: 96%;
+                        height: auto;
+                    }
+                }
+            }
+
+            &-large {
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+                @include media-sm-min {
+                    width: 96%;
+                }
+
+                @include media-md-min {
+                    width: 540px;
+                }
+
+                &__top, &__bottom {
+                    display: block;
+                }
+
+                &__middle {
+                    width: 100%;
+                    background: {
+                        image: url('../../images/browser-ui-large_middle.png');
+                        size: contain;
+                        repeat: repeat;
+                    }
+
+                    video, img {
+                        width: 96%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}

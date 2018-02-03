@@ -1,0 +1,127 @@
+/**
+ * Color Scheme is based on the Solarized color-scheme that is primarily used in IDEs and text-editors.
+ * @section Colors
+ * @page Colors
+ */
+
+/**
+ * Color used for navigation/header/footer bar background
+ *
+ * @color {#ed174c} Header and footer bar background.|$header-bg-color - Colors
+ */
+$header-bg-color: #ed174c;
+
+/**
+ * Color used for navigation/header bar link color (link and visited)
+ * @color {#350513} Header and footer bar link color (link and visited)|$header-link-color - Colors
+ */
+$header-link-color: #350513;
+
+/**
+ * Base Color 03
+ * @color {#002b36} Base Color 03|$color-base-03 - Colors
+ */
+$color-base-03: #002b36;
+
+/**
+ * Base Color 02
+ * @color {#073642} Base Color 02|$color-base-02 - Colors
+ */
+$color-base-02: #073642;
+
+/**
+ * Base Color 01
+ * @color {#586e75} Base Color 01|$color-base-01 - Colors
+ */
+$color-base-01: #586e75;
+
+/**
+ * Base Color 00
+ * @color {#657b83} Base Color 00|$color-base-00 - Colors
+ */
+$color-base-00: #657b83;
+
+/**
+ * Base Color 0
+ * @color {#839496} Base Color 0|$color-base-0 - Colors
+ */
+$color-base-0: #839496;
+
+/**
+ * Base Color 1
+ * @color {#93a1a1} Base Color 1|$color-base-1 - Colors
+ */
+$color-base-1: #93a1a1;
+
+/**
+ * Base Color 2
+ * @color {#eee8d5} Base Color 2|$color-base-2 - Colors
+ */
+$color-base-2: #eee8d5;
+
+/**
+ * Base Color 3
+ * @color {#fdf6e3} Base Color 3|$color-base-3 - Colors
+ */
+$color-base-3: #fdf6e3;
+
+/**
+ * Accent Color 1
+ * @color {#b58900} Accent Color 1|$color-accent-01 - Colors
+ */
+$color-accent-01: #b58900;
+
+/**
+ * Accent Color 2
+ * @color {#cb4b16} Accent Color 2|$color-accent-02 - Colors
+ */
+$color-accent-02: #cb4b16;
+
+/**
+ * Accent Color 3
+ * @color {#dc322f} Accent Color 3|$color-accent-03 - Colors
+ */
+$color-accent-03: #dc322f;
+
+/**
+ * Accent Color 4
+ * @color {#ED174C} Accent Color 4|$color-accent-04 - Colors
+ */
+$color-accent-04: #ED174C;
+
+/**
+ * Accent Color 5
+ * @color {#6c71c4} Accent Color 5|$color-accent-05 - Colors
+ */
+$color-accent-05: #6c71c4;
+
+/**
+ * Accent Color 6
+ * @color {#268bd2} Accent Color 6|$color-accent-06 - Colors
+ */
+$color-accent-06: #268bd2;
+
+/**
+ * Accent Color 7
+ * @color {#2aa198} Accent Color 7|$color-accent-07 - Colors
+ */
+$color-accent-07: #2aa198;
+
+/**
+ * Accent Color 8 — JessGreen.io logo color
+ * @color {#A5CF4C} Accent Color 8/JessGreen.io logo color|$color-accent-08 - Colors
+ */
+$color-accent-08: #A5CF4C;
+
+/**
+ * Gradient Color — Yellow
+ * @color {rgba(253, 234, 50, 0.25)} Yellow stop for Lead background - Colors
+ */
+$gradient-color-stop-1: rgba(253, 234, 50, 0.25);
+
+
+/**
+ * Gradient Color — Blue
+ * @color {rgba(0, 143, 197, 0.25)} Blue stop for Lead background - Colors
+ */
+$gradient-color-stop-2: rgba(0, 143, 197, 0.25);

@@ -1,5 +1,5 @@
 let mix = require('laravel-mix');
-
+mix.webpackConfig({ devtool: "source-map" });
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -11,5 +11,6 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+mix.js('resources/assets/scripts/main.js', 'public/assets/scripts')
+   .sass('resources/assets/styles/scss/screen.scss', 'public/assets/styles')
+   .sass('resources/assets/styles/scss/print.scss', 'public/assets/styles').sourceMaps();
