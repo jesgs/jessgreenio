@@ -10,9 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Models\Portfolio;
 
 Route::get('/', function () {
-    return view('home');
+    $items = Portfolio::query()->paginate(6);
+    return view('home', ['items' => $items]);
 });
 
 
