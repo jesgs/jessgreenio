@@ -144,7 +144,13 @@ return [
         | in order to be marked as safe.
         |
         */
-        'facades' => [],
+        'facades' => [
+            'Voyager' => [
+                'is_safe' => [
+                    'image'
+                ]
+            ]
+        ],
 
         /*
         |--------------------------------------------------------------------------
@@ -179,7 +185,8 @@ return [
             'head',
             'last',
             'mix',
-            'setting'
+            'setting',
+            'storage'
         ],
 
         /*

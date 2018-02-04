@@ -1,16 +1,16 @@
-<div class="portfolio__item">
+<div class="portfolio__item{{ cycle([' portfolio__item--alt', ''], loop.index) }}">
     <div class="portfolio__item__img vm__xs--bottom-2">
         <div class="browser-ui-small vm__xs--bottom-2">
-            <img class="browser-ui-small__top" width="100%" height="auto" src="assets/images/browser-ui-large_top.jpg" alt="" />
+            <img class="browser-ui-small__top" width="100%" height="auto" src="{{asset('/images/browser-ui-large_top.jpg')}}" alt="" />
             <div class="browser-ui-small__middle">
-                <a href="details/rainfall-tool.html"><img src="details/media/rainfall-tool/rainfall-thmb.png" width="385" height="225" alt="Rainfall Tool"></a>
+                <a href="{{route('portfolio.single', {slug: item.slug})}}"><img src="{{Voyager.image(item.thumbnail('browser-small', 'cover_image'))}}" width="385" height="225" alt="{{item.title}}"></a>
             </div>
-            <img class="browser-ui-small__bottom" width="100%" height="auto" src="assets/images/browser-ui-large_bottom.png" alt="">
+            <img class="browser-ui-small__bottom" width="100%" height="auto" src="{{asset('/images/browser-ui-large_bottom.png')}}" alt="">
         </div>
     </div>
-    <h3 class="portfolio__item__title vm__xs--bottom-2">Rainfall Tool</h3>
+    <h3 class="portfolio__item__title vm__xs--bottom-2">{{item.title}}</h3>
     <div class="row">
-        <p class="portfolio__item__description vm__xs--bottom-2 col-md-6 col-md-offset-3">A rainfall charting tool powered by Laravel and Chart.js.</p>
+        <div class="portfolio__item__description vm__xs--bottom-2 col-md-6 col-md-offset-3">{{item.excerpt|raw}}</div>
     </div>
-    <p><a href="details/rainfall-tool.html" class="portfolio__item__btn">View Details</a></p>
+    <p><a href="{{route('portfolio.single', {slug: item.slug})}}" class="portfolio__item__btn{{ cycle([' portfolio__item__btn--alt', ''], loop.index)}}">View Details</a></p>
 </div>

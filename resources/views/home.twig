@@ -9,7 +9,9 @@
 </div>
 
 <div class="row portfolio">
-
+{% for item in items %}
+    {% include 'portfolio/_item.twig' %}
+{% endfor %}
 </div>
 
 {% include 'globals/_footer.twig' %}

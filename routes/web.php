@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('home', ['items' => $items]);
 });
 
+Route::get('/portfolio/{slug}', function(Portfolio $item) {
+    return view('portfolio.single', ['item' => $item]);
+})->name('portfolio.single');
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
