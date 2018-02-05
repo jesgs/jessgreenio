@@ -11,16 +11,20 @@
 |
 */
 use App\Models\Portfolio;
+use App\Models\Page;
 
 Route::get('/', function () {
     $items = Portfolio::query()->paginate(6);
     return view('home', ['items' => $items]);
 });
 
-Route::get('/portfolio/{item}', function(Portfolio $item) {
+Route::get('/{page}', function (Page $page) {
+    return view('page', compact('page'));
+});
+
+Route::get('portfolio/{item}', function(Portfolio $item) {
     return view('portfolio.single', ['item' => $item]);
 })->name('portfolio.single');
-
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
