@@ -149,6 +149,11 @@ return [
                 'is_safe' => [
                     'image'
                 ]
+            ],
+            'Markdown' => [
+                'is_safe' => [
+                    'convertToHtml'
+                ]
             ]
         ],
 
@@ -186,7 +191,8 @@ return [
             'last',
             'mix',
             'setting',
-            'storage'
+            'storage',
+            'json_decode'
         ],
 
         /*

@@ -1,16 +1,11 @@
 <div class="portfolio__item{{ cycle([' portfolio__item--alt', ''], loop.index) }}">
-    <div class="portfolio__item__img vm__xs--bottom-2">
-        <div class="browser-ui-small vm__xs--bottom-2">
-            <img class="browser-ui-small__top" width="100%" height="auto" src="{{asset('/images/browser-ui-large_top.jpg')}}" alt="" />
-            <div class="browser-ui-small__middle">
-                <a href="{{route('portfolio.single', {slug: item.slug})}}"><img src="{{Voyager.image(item.thumbnail('browser-small', 'cover_image'))}}" width="385" height="225" alt="{{item.title}}"></a>
-            </div>
-            <img class="browser-ui-small__bottom" width="100%" height="auto" src="{{asset('/images/browser-ui-large_bottom.png')}}" alt="">
+    {% include 'portfolio/_browser-ui.twig' %}
+    {% include 'portfolio/_title.twig' with {title: item.title} %}
+    <div class="row">
+        <div class="portfolio__item__description vm__xs--bottom-2 col-md-6 col-md-offset-3">
+            <p>{{item.excerpt}}</p>
         </div>
     </div>
-    <h3 class="portfolio__item__title vm__xs--bottom-2">{{item.title}}</h3>
-    <div class="row">
-        <div class="portfolio__item__description vm__xs--bottom-2 col-md-6 col-md-offset-3">{{item.excerpt|raw}}</div>
-    </div>
+
     <p><a href="{{route('portfolio.single', {slug: item.slug})}}" class="portfolio__item__btn{{ cycle([' portfolio__item__btn--alt', ''], loop.index)}}">View Details</a></p>
 </div>

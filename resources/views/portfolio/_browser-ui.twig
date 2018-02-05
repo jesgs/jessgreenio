@@ -1,0 +1,12 @@
+{% if size == '' %}
+    {% set size = 'small' %}
+{% endif %}
+<div class="portfolio__item__img vm__xs--bottom-2">
+    <div class="browser-ui-{{size}} vm__xs--bottom-2">
+        <img class="browser-ui-{{size}}__top" width="100%" height="auto" src="{{asset('/images/browser-ui-large_top.jpg')}}" alt="" />
+        <div class="browser-ui-{{size}}__middle">
+            <a href="{{route('portfolio.single', {slug: item.slug})}}"><img src="{{Voyager.image(item.thumbnail('browser-' ~ size, 'cover_image'))}}" width="385" height="225" alt="{{item.title}}"></a>
+        </div>
+        <img class="browser-ui-{{size}}__bottom" width="100%" height="auto" src="{{asset('/images/browser-ui-large_bottom.png')}}" alt="">
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="portfolio__item__img vm__xs--bottom-2">
+    <div class="browser-ui-large vm__xs--bottom-2">
+        <img class="browser-ui-large__top" width="100%" height="auto" src="{{asset('/images/browser-ui-large_top.jpg')}}" alt="" />
+        <div class="browser-ui-large__middle">
+            {% set thumbs = item.thumbnail('browser-large', 'images')%}
+            {% set fullSize = json_decode(item.images) %}
+            {% for image in item.thumbnail('browser-large', 'images') %}
+                <a href="{{ Voyager.image(fullSize[loop.index - 1]) }}"><img src="{{Voyager.image(image)}}" alt="{{item.title}}"></a>
+            {% endfor %}
+            {% if item.media %}
+                {% set media = json_decode(item.media)[0] %}
+                <video controls src="{{Voyager.image(media.download_link)}}"></video>
+            {% endif %}
+        </div>
+        <img class="browser-ui-large__bottom" width="100%" height="auto" src="{{asset('/images/browser-ui-large_bottom.png')}}" alt="">
+    </div>
+</div>
