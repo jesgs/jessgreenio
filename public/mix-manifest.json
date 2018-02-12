@@ -4,5 +4,8 @@
     "/assets/styles/print.css": "/assets/styles/print.css",
     "/assets/scripts/main.js.map": "/assets/scripts/main.js.map",
     "/assets/styles/screen.css.map": "/assets/styles/screen.css.map",
-    "/assets/styles/print.css.map": "/assets/styles/print.css.map"
+    "/assets/styles/print.css.map": "/assets/styles/print.css.map",
+    "/images/browser-ui-large_bottom.png": "/images/browser-ui-large_bottom.png",
+    "/images/browser-ui-large_top.png": "/images/browser-ui-large_top.png",
+    "/images/browser-ui-large.png": "/images/browser-ui-large.png"
 }

@@ -14,3 +14,5 @@ mix.webpackConfig({ devtool: "source-map" });
 mix.js('resources/assets/scripts/main.js', 'public/assets/scripts')
    .sass('resources/assets/styles/scss/screen.scss', 'public/assets/styles')
    .sass('resources/assets/styles/scss/print.scss', 'public/assets/styles').sourceMaps();
+
+mix.copy('resources/assets/images/html/*', 'public/images');
