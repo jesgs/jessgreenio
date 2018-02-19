@@ -18,7 +18,7 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::get('/', function () {
-    $items = Portfolio::query()->paginate(6);
+    $items = Portfolio::query()->orderBy('order')->paginate(6);
     return view('home', ['items' => $items]);
 });
 
