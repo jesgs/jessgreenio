@@ -12,12 +12,12 @@
 
     &__content {
         background-color: #fefefe;
-        -webkit-border-radius: 15px;
-        -moz-border-radius: 15px;
-        border-radius: 15px;
         border: 1px solid #888;
         box-shadow: #000 2px 2px 2px;
         @include media-md-min {
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
             margin: 5% auto;
             padding: 15px;
             width: 65%;
