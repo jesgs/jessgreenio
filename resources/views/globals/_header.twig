@@ -9,7 +9,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{% if item.title %}JessGreen.io &raquo; {{ item.title }}{% else %}JessGreen.io{% endif %}" />
     <meta property="og:description" content="{% if item.excerpt %}{{ item.excerpt }}{% else %}The portfolio of Twin Cities web developer Jess Green{% endif %}" />
-    <meta property="og:image" content="{% if item.thumbnail('browser-small', 'cover_image') %}{{ Voyager.image(item.thumbnail('browser-small', 'cover_image')) }}{% else %}{{asset('/images/logo.png')}}{% endif %}" />
+    <meta property="og:image" content="{% if item.thumbnail('browser-small', 'cover_image') %}https:{{ Voyager.image(item.thumbnail('browser-small', 'cover_image')) }}{% else %}{{asset('/images/logo.png')}}{% endif %}" />
     <meta property="og:image:alt" content="JessGreen.io" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
