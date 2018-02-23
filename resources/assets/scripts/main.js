@@ -1,7 +1,7 @@
-(function(doc) {
-    doc.addEventListener('DOMContentLoaded', function() {
-        var menuControl = doc.getElementById('js-mobile-menu-control'),
-            menu = doc.getElementById('js-mobile-menu');
+(function() {
+    document.addEventListener('DOMContentLoaded', function() {
+        let menuControl = document.getElementById('js-mobile-menu-control'),
+            menu = document.getElementById('js-mobile-menu');
 
         menuControl.addEventListener('click', function(e) {
             menu.classList.toggle('nav-header__nav-bar--open');
@@ -14,4 +14,4 @@
             }
         })
     });
-})(document);
+})();
