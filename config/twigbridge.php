@@ -154,6 +154,11 @@ return [
                 'is_safe' => [
                     'convertToHtml'
                 ]
+            ],
+            'Request' => [
+                'is_safe' => [
+                    'url'
+                ]
             ]
         ],
 
@@ -224,7 +229,7 @@ return [
         |
         */
         'filters' => [
-            'get' => 'data_get',    
+            'get' => 'data_get',
         ],
-    ],  
+    ],
 ];

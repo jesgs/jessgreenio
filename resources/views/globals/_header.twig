@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title>Jess Green's Portfolio</title>
+    <title>Jess Green's Portfolio{% if item.title %} &raquo; {{ item.title }}{% endif %}</title>
     <link rel="stylesheet" href="{{mix('assets/styles/screen.css')}}" media="all">
-    <meta property="og:url" content="https://www.jessgreen.io/" />
+    <meta property="og:url" content="{{Request.url()}}" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="JessGreen.io" />
-    <meta property="og:description" content="The portfolio of Twin Cities web developer Jess Green" />
-    <meta property="og:image" content="{{asset('/images/logo.png')}}" />
+    <meta property="og:title" content="{% if item.title %}JessGreen.io &raquo; {{ item.title }}{% else %}JessGreen.io{% endif %}" />
+    <meta property="og:description" content="{% if item.excerpt %}{{ item.excerpt }}{% else %}The portfolio of Twin Cities web developer Jess Green{% endif %}" />
+    <meta property="og:image" content="{% if item.thumbnail('browser-small', 'cover_image') %}{{ Voyager.image(item.thumbnail('browser-small', 'cover_image')) }}{% else %}{{asset('/images/logo.png')}}{% endif %}" />
     <meta property="og:image:alt" content="JessGreen.io" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">

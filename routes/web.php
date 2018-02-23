@@ -23,7 +23,7 @@ Route::get('/', function () {
 });
 
 Route::get('/{page}', function (Page $page) {
-    return view('page', compact('page'));
+    return view('page', ['item' => $page]);
 });
 
 Route::get('portfolio/{item}', function(Portfolio $item) {
