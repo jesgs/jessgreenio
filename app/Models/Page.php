@@ -9,8 +9,7 @@ use TCG\Voyager\Traits\Translatable;
 
 class Page extends Model
 {
-    use Translatable,
-        HasRelationships;
+    use Translatable;
 
     protected $translatable = ['title', 'slug', 'body'];
 
