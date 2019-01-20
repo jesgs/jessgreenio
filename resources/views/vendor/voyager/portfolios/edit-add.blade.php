@@ -53,7 +53,11 @@
                             @foreach($dataTypeRows as $row)
                             <!-- GET THE DISPLAY OPTIONS -->
                                 @php
-                                    $options = json_decode($row->details);
+                                    if (is_string($row->details)) {
+                                        $options = json_decode($row->details);
+                                    } else {
+                                        $options = $row->details;
+                                    }
                                     $display_options = isset($options->display) ? $options->display : NULL;
                                 @endphp
                                 @if ($options && isset($options->formfields_custom))
