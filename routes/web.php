@@ -12,20 +12,30 @@
 */
 use App\Models\Portfolio;
 use App\Models\Page;
+use App\Models\Post;
 
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
+Route::domain(env('APP_BLOG_HOST'))->group(function () {
+    Route::get('/', function () {
+
+    });
 });
 
-Route::get('/', function () {
-    $items = Portfolio::query()->orderBy('order')->paginate(6);
-    return view('home', ['items' => $items]);
+Route::domain(env('APP_MAIN_HOST'))->group(function () {
+
+    Route::group(['prefix' => 'admin'], function () {
+        Voyager::routes();
+    });
+
+    Route::get('/', function () {
+        return view('home', ['items' => []]);
+    });
+
+    Route::get('/{page}', function (Page $page) {
+        return view('page', ['item' => $page]);
+    });
+
+    Route::get('portfolio/{item}', function(Portfolio $item) {
+        return view('portfolio.single', ['item' => $item]);
+    })->name('portfolio.single');
 });
 
-Route::get('/{page}', function (Page $page) {
-    return view('page', ['item' => $page]);
-});
-
-Route::get('portfolio/{item}', function(Portfolio $item) {
-    return view('portfolio.single', ['item' => $item]);
-})->name('portfolio.single');
