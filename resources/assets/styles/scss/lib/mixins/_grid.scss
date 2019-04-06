@@ -22,9 +22,7 @@
  */
 [class^="col-"] {
     padding: 0 $horizontal-spacing;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    @include box-sizing(border-box);
     position: relative;
 }
 
@@ -48,8 +46,10 @@
  * </div>
  */
 .container {
-    box-sizing: border-box;
+    @include box-sizing(border-box);
     margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
     width: 100%;
 }
 
@@ -85,6 +85,8 @@
 .row {
     clear: both;
     float: none;
+    margin-right: -20px;
+    margin-left: -20px;
 
     &:before,
     &:after {
@@ -98,7 +100,7 @@
 }
 
 .col-inline {
-    float: none;
+    float: none !important;
     display: inline-block;
 }
 
@@ -193,15 +195,4 @@
             }
         }
     }
-}
-
-@mixin box-sizing($box-model) {
-    @if ($box-model == '') {
-        $box-model: border-box;
-    }
-
-    -webkit-box-sizing: $box-model; // Safari <= 5
-    -moz-box-sizing: $box-model; // Firefox <= 19
-    box-sizing: $box-model;
-
 }

@@ -1,45 +1,8 @@
 /**
- * Color Scheme is based on the Solarized color-scheme that is primarily used in IDEs and text-editors.
+ * Color Scheme
  * @section Colors
  * @page Colors
  */
-
-/**
- * Color used for navigation/header/footer bar background
- *
- * @color {#ed174c} Header and footer bar background.|$header-bg-color - Colors
- */
-$header-bg-color: #ed174c;
-
-/**
- * Color used for navigation/header bar link color (link and visited)
- * @color {#350513} Header and footer bar link color (link and visited)|$header-link-color - Colors
- */
-$header-link-color: #350513;
-
-/**
- * Base Color 03
- * @color {#002b36} Base Color 03|$color-base-03 - Colors
- */
-$color-base-03: #002b36;
-
-/**
- * Base Color 02
- * @color {#073642} Base Color 02|$color-base-02 - Colors
- */
-$color-base-02: #073642;
-
-/**
- * Base Color 01
- * @color {#586e75} Base Color 01|$color-base-01 - Colors
- */
-$color-base-01: #586e75;
-
-/**
- * Base Color 00
- * @color {#657b83} Base Color 00|$color-base-00 - Colors
- */
-$color-base-00: #657b83;
 
 /**
  * Base Color 0
@@ -61,67 +24,126 @@ $color-base-2: #eee8d5;
 
 /**
  * Base Color 3
- * @color {#fdf6e3} Base Color 3|$color-base-3 - Colors
+ * @color {#f3f7ff} Base Color 3|$color-base-3 - Colors
  */
-$color-base-3: #fdf6e3;
+$color-base-3: #f3f7ff;
 
 /**
  * Accent Color 1
- * @color {#b58900} Accent Color 1|$color-accent-01 - Colors
+ * @color {#00a6ce} Accent Color 1|$color-accent-01 - Colors
  */
-$color-accent-01: #b58900;
+$color-accent-01: #00a6ce;
 
 /**
  * Accent Color 2
- * @color {#cb4b16} Accent Color 2|$color-accent-02 - Colors
+ * @color {#e2b322} Accent Color 2|$color-accent-02 - Colors
  */
-$color-accent-02: #cb4b16;
+$color-accent-02: #e2b322;
 
 /**
  * Accent Color 3
- * @color {#dc322f} Accent Color 3|$color-accent-03 - Colors
+ * @color {#00cc6f} Accent Color 3|$color-accent-03 - Colors
  */
-$color-accent-03: #dc322f;
+$color-accent-03: #00cc6f;
 
 /**
- * Accent Color 4
- * @color {#ED174C} Accent Color 4|$color-accent-04 - Colors
+ * @color {#5fb9b2} Accent Color 4
  */
-$color-accent-04: #ED174C;
+$color-accent-04: #5fb9b2;
 
 /**
- * Accent Color 5
- * @color {#6c71c4} Accent Color 5|$color-accent-05 - Colors
+ * Accent colors can be tinted with white using increments of 25%. Tinting is provided by the <code>tint</code>
+ * mixin from bourbon
+ *
+ * @section Tints
+ * @page Colors
  */
-$color-accent-05: #6c71c4;
 
 /**
- * Accent Color 6
- * @color {#268bd2} Accent Color 6|$color-accent-06 - Colors
+ * Accent Color 1 25% tint
+ * @color {#{tint($color-accent-01, 25)}} Accent Color 1 25% tint - Tints
  */
-$color-accent-06: #268bd2;
+/**
+ * Accent Color 1 50% tint
+ * @color {#{tint($color-accent-01, 50)}} Accent Color 1 50% tint - Tints
+ */
+/**
+ * Accent Color 1 75% tint
+ * @color {#{tint($color-accent-01, 75)}} Accent Color 1 75% tint - Tints
+ */
 
 /**
- * Accent Color 7
- * @color {#2aa198} Accent Color 7|$color-accent-07 - Colors
+ * Accent Color 2 25% tint
+ * @color {#{tint($color-accent-02, 25)}} Accent Color 2 25% tint - Tints
  */
-$color-accent-07: #2aa198;
+/**
+ * Accent Color 2 50% tint
+ * @color {#{tint($color-accent-02, 50)}} Accent Color 2 50% tint - Tints
+ */
+/**
+ * Accent Color 2 75% tint
+ * @color {#{tint($color-accent-02, 75)}} Accent Color 2 75% tint - Tints
+ */
 
 /**
- * Accent Color 8 — JessGreen.io logo color
- * @color {#A5CF4C} Accent Color 8/JessGreen.io logo color|$color-accent-08 - Colors
+ * Accent Color 3 25% tint
+ * @color {#{tint($color-accent-03, 25)}} Accent Color 3 25% tint - Tints
  */
-$color-accent-08: #A5CF4C;
+/**
+ * Accent Color 3 50% tint
+ * @color {#{tint($color-accent-03, 50)}} Accent Color 3 50% tint - Tints
+ */
+/**
+ * Accent Color 3 75% tint
+ * @color {#{tint($color-accent-03, 75)}} Accent Color 3 75% tint - Tints
+ */
 
 /**
- * Gradient Color — Yellow
- * @color {rgba(253, 234, 50, 0.25)} Yellow stop for Lead background - Colors
+ * Accent colors can be shaded with black using increments of 25%. Shading is provided by the <code>shade</code>
+ * mixin from bourbon
+ *
+ * @section Shades
+ * @page Colors
  */
-$gradient-color-stop-1: rgba(253, 234, 50, 0.25);
-
 
 /**
- * Gradient Color — Blue
- * @color {rgba(0, 143, 197, 0.25)} Blue stop for Lead background - Colors
+ * Accent Color 1 25% shade
+ * @color {#{shade($color-accent-01, 25)}} Accent Color 1 25% shade - Shades
  */
-$gradient-color-stop-2: rgba(0, 143, 197, 0.25);
+/**
+ * Accent Color 1 50% shade
+ * @color {#{shade($color-accent-01, 50)}} Accent Color 1 50% shade - Shades
+ */
+/**
+ * Accent Color 1 75% shade
+ * @color {#{shade($color-accent-01, 75)}} Accent Color 1 75% shade - Shades
+ */
+
+/**
+ * Accent Color 2 25% shade
+ * @color {#{shade($color-accent-02, 25)}} Accent Color 2 25% shade - Shades
+ */
+/**
+ * Accent Color 2 50% shade
+ * @color {#{shade($color-accent-02, 50)}} Accent Color 2 50% shade - Shades
+ */
+/**
+ * Accent Color 2 75% shade
+ * @color {#{shade($color-accent-02, 75)}} Accent Color 2 75% shade - Shades
+ */
+
+/**
+ * Accent Color 3 25% shade
+ * @color {#{shade($color-accent-03, 25)}} Accent Color 3 25% shade - Shades
+ */
+/**
+ * Accent Color 3 50% shade
+ * @color {#{shade($color-accent-03, 50)}} Accent Color 3 50% shade - Shades
+ */
+/**
+ * Accent Color 3 75% shade
+ * @color {#{shade($color-accent-03, 75)}} Accent Color 3 75% shade - Shades
+ */
+
+$background-color: $color-base-3;
+$text-color: shade($color-accent-01, 75);
