@@ -12,8 +12,8 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title>Jess Green's Portfolio{% if item.title %} &raquo; {{ item.title }}{% endif %}</title>
-    <link rel="stylesheet" href="{{mix('assets/styles/screen.css')}}" media="all">
+    <title>JessGreen.io | Portfolio of Jess Green {% if item.title %} &raquo; {{ item.title }}{% endif %}</title>
+
     <meta property="og:url" content="{{Request.url()}}" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{% if item.title %}JessGreen.io &raquo; {{ item.title }}{% else %}JessGreen.io{% endif %}" />
@@ -27,25 +27,26 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#b91d47">
     <meta name="theme-color" content="#ee0f4a">
-    <script src="https://use.typekit.net/yyw4yxn.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
-    <script data-main="assets/scripts/main" src="{{mix('assets/scripts/frontend.js')}}"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.typekit.net/laq0noo.css" />
+    <link rel="stylesheet" href="{{mix('assets/styles/screen.css')}}" media="all" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script data-main="assets/scripts" src="{{mix('assets/scripts/frontend.js')}}"></script>
 </head>
 <body>
-<div id="main" class="container">
-    <header class="row nav-header">
-        <div class="col-md-12">
-            <h1 class="pull-right logo">
-                <span class="sr-only">Jess Green's Portfolio</span>
-            </h1>
-            <nav>
-                <span id="js-mobile-menu-control" class="menu menu--open visible-xxs visible-xs visible-sm" data-menu="js-mobile-menu"></span>
-                <ul id="js-mobile-menu" class="nav-header__nav-bar">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/resume">Résumé</a></li>
-                    <li><a target="_blank" rel="noopener nofollow" href="//www.github.com/jesgs">Github</a></li>
-                </ul>
-            </nav>
-        </div>
+<div class="container">
+    <header class="js-sticky main-header main-header--portfolio row">
+        <h1 class="main-header__logo">
+            <span class="sr-only">The Portfolio of Jess Green</span>
+            <img src="assets/images/logo.png" />
+        </h1>
+        <nav class="main-header__navbar col-inline col-md-offset-1 col-md-6">
+            <ul class="hlist">
+                <li><a href="#">Work</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
     </header>
