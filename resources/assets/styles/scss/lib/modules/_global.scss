@@ -109,7 +109,8 @@
      */
     &--blog {
         color: $color-base-3;
-        //background-color: $color-base-02;
+        position: static;
+        top: 0;
 
         h1 {
             color: shade($color-accent-01, 75%);

@@ -13,11 +13,18 @@
 use App\Models\Portfolio;
 use App\Models\Page;
 use App\Models\Post;
+use App\Models\Category;
+
 
 Route::domain(env('APP_BLOG_HOST'))->group(function () {
-    Route::get('/', function () {
+    Route::get('category/{category}/{post}', function (Category $category, Post $post) {
+        return view('post.single', compact('category', 'post'));
+    })->name('post.single');
 
-    });
+    Route::get('/', function () {
+        $posts = Post::where('status', '=', 'publish')->paginate();
+        return view('post.index', compact('posts'));
+    })->name('post.index');
 });
 
 Route::domain(env('APP_MAIN_HOST'))->group(function () {

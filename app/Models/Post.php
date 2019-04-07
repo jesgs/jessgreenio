@@ -6,6 +6,47 @@ use Illuminate\Database\Eloquent\Model;
 use TCG\Voyager\Traits\Translatable;
 
 
+/**
+ * App\Models\Post
+ *
+ * @property int $id
+ * @property int $author_id
+ * @property int $category_id
+ * @property string $title
+ * @property string $slug
+ * @property string|null $excerpt
+ * @property string $body
+ * @property string|null $meta_description
+ * @property string|null $meta_keywords
+ * @property string|null $status
+ * @property int|null $featured
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property string|null $deleted_at
+ * @property-read null $translated
+ * @property-read \Illuminate\Database\Eloquent\Collection|\TCG\Voyager\Models\Translation[] $translations
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post whereAuthorId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post whereBody($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post whereCategoryId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post whereExcerpt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post whereFeatured($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post whereMetaDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post whereMetaKeywords($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post whereTranslation($field, $operator, $value = null, $locales = null, $default = true)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post withTranslation($locale = null, $fallback = true)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post withTranslations($locales = null, $fallback = true)
+ * @mixin \Eloquent
+ */
 class Post extends Model
 {
     use Translatable;
@@ -15,9 +56,9 @@ class Post extends Model
     /**
      * Statuses.
      */
-    const STATUS_PUBLISH = 'PUBLISH';
-    const STATUS_DRAFT = 'DRAFT';
-    const STATUS_PENDING = 'PENDING';
+    const STATUS_PUBLISH = 'publish';
+    const STATUS_DRAFT = 'draft';
+    const STATUS_PENDING = 'pending';
 
     /**
      * List of statuses.
@@ -31,5 +72,35 @@ class Post extends Model
     ];
 
     protected $guarded = [];
+
+
+    public function getAuthorIdAttribute($value)
+    {
+        if (!$value) {
+            $value = \Auth::user()->id;
+        }
+
+        return $value;
+    }
+
+
+    public function setAuthorIdAttribute($value)
+    {
+        if (!$value) {
+            $value = \Auth::user()->id;
+        }
+
+        $this->attributes['author_id'] = $value;
+    }
+
+
+    public function getRouteKeyName()
+    {
+        if (in_array(\Route::getCurrentRoute()->action['as'], ['post.single'])) {
+            return 'slug';
+        }
+
+        return 'id';
+    }
 
 }
