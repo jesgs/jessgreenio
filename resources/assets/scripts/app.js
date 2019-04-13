@@ -17,7 +17,11 @@
                 }
 
                 $(window).on('scroll', function (e) {
+                    let windowWidth = window.innerWidth;
                     let scrollTop = $(this).scrollTop();
+                    if (windowWidth <= 768) {
+                        return;
+                    }
 
                     if (scrollTop > (headerBottom + startSticky)) {
                         $this.addClass('is-sticky');
@@ -31,7 +35,6 @@
                                  .addClass('is-sticky--off');
                         }
                     }
-
                 });
             });
         }

@@ -197,7 +197,8 @@ return [
             'mix',
             'setting',
             'storage',
-            'json_decode'
+            'json_decode',
+            'menu'
         ],
 
         /*
