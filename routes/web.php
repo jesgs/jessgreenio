@@ -17,8 +17,8 @@ use App\Models\Category;
 
 
 Route::domain(env('APP_BLOG_HOST'))->group(function () {
-    Route::get('category/{category}/{post}', function (Category $category, Post $post) {
-        return view('post.single', compact('category', 'post'));
+    Route::get('blog/{year}/{month}/{day}/{post}', function ($year, $month, $day, Post $post) {
+        return view('post.single', compact('post'));
     })->name('post.single');
 
     Route::get('/', function () {
