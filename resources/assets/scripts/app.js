@@ -19,7 +19,8 @@
                 $(window).on('scroll', function (e) {
                     let windowWidth = window.innerWidth;
                     let scrollTop = $(this).scrollTop();
-                    if (windowWidth <= 768) {
+
+                    if (windowWidth <= 992) {
                         return;
                     }
 

@@ -34,7 +34,8 @@ Route::domain(env('APP_MAIN_HOST'))->group(function () {
     });
 
     Route::get('/', function () {
-        return view('home', ['items' => []]);
+        $resume = \TCG\Voyager\Models\Page::whereSlug('resume')->first();
+        return view('home', ['resume' => $resume]);
     });
 
     Route::get('/{page}', function (Page $page) {

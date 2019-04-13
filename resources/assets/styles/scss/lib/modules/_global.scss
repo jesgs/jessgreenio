@@ -24,26 +24,29 @@
  * @section Global Elements
  */
 .main-header {
+    @include box-sizing(border-box);
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    height: 160px;
-    position: absolute;
-    width: 100%;
-    top: -160px;
-    @include box-sizing(border-box);
 
-    &.is-sticky {
-        position: fixed;
-        animation-duration: 1.5s;
-        animation-name: slideIn;
-        z-index: 9;
-        top: 0;
-    }
+    @include media-md-min {
+        width: 100%;
+        height: 160px;
+        position: absolute;
+        top: -160px;
 
-    &.is-sticky--off {
-        animation-duration: 1.5s;
-        animation-name: slideOut;
+        &.is-sticky {
+            position: fixed;
+            animation-duration: 1.5s;
+            animation-name: slideIn;
+            z-index: 9;
+            top: 0;
+        }
+
+        &.is-sticky--off {
+            animation-duration: 1.5s;
+            animation-name: slideOut;
+        }
     }
 
     &__logo {
