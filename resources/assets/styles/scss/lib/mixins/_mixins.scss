@@ -23,14 +23,3 @@
     -moz-box-sizing: $box-model; // Firefox <= 19
     box-sizing: $box-model;
 }
-
-/// Remove the unit of a length
-/// @param {Number} $number - Number to remove unit from
-/// @return {Number} - Unitless number
-@function strip-unit($number) {
-    @if type-of($number) == 'number' and not unitless($number) {
-        @return $number / ($number * 0 + 1);
-    }
-
-    @return $number;
-}

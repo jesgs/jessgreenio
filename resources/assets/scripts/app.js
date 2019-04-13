@@ -1,3 +1,6 @@
+/**
+ * @todo Consolidate and refactor into separate components
+ */
 (function ($) {
     let APP = {};
 
@@ -37,6 +40,45 @@
                         }
                     }
                 });
+            });
+
+            $.fn.isInViewport = function() {
+                let elementTop = $(this).position().top;
+                let elementBottom = elementTop + $(this).outerHeight();
+                let viewportTop = $(window).scrollTop() + 180;
+                // let viewportBottom = viewportTop + $(window).height();
+
+                return elementBottom > viewportTop && elementTop < viewportTop;
+            };
+
+            $(window).on('resize scroll', function () {
+                $('.js-scroll-spy').each(function () {
+                    let element = $(this).attr('href');
+                    let $element = $(element);
+                    let windowWidth = window.innerWidth;
+
+                    if ($element.isInViewport() && (windowWidth > 992)) {
+                        if (!$(this).is('.i-spy')) {
+                            // find other elements that have "i-spy"
+                            $(this).parents('ul').find('a').removeClass('i-spy');
+                            $(this).addClass('i-spy');
+                        }
+                    }
+                });
+            });
+
+
+            $('.js-scroll-spy').on('click touchend', function (e) {
+                let windowWidth = window.innerWidth;
+
+                if (windowWidth > 992) {
+                    e.preventDefault();
+                    let $element = $($(this).attr('href'));
+                    let offset = 160;
+
+                    $('html,body').animate({
+                        scrollTop : ($element.position().top - offset) + 'px' }, 1000, 'swing');
+                }
             });
         }
     };

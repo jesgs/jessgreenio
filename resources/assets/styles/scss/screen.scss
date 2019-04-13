@@ -329,6 +329,39 @@ h, .h {
     }
 }
 
+.show-xxs,
+.show-xs,
+.show-sm,
+.show-md,
+.show-lg {
+    display: none !important;
+}
+
+.show-xs {
+    @media (min-width: $xsmall-screen-min) {
+        display: block !important;
+    }
+}
+
+.show-sm {
+    @media (min-width: $small-screen-min) {
+        display: block !important;
+    }
+}
+
+.show-md {
+    @media (min-width: $medium-screen-min) {
+        display: block !important;
+    }
+}
+
+.show-lg {
+    @media (min-width: $large-screen-min) {
+        display: block !important;
+    }
+}
+
+
 strong {
     font-weight: bold;
 }

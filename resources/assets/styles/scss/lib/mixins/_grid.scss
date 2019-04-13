@@ -20,7 +20,7 @@
  *   box-sizing: border-box;
  * }
  */
-[class^="col-"] {
+[class*="col-"] {
     padding: 0 $horizontal-spacing;
     @include box-sizing(border-box);
     position: relative;
