@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<rss version="2.0">
+    <channel>
+        <title>JesGs.com</title>
+        <link>{{ env('APP_BLOG_HOST') }}</link>
+        <description></description>
+    </channel>
+    {% for post in posts %}
+    <item>
+        <title>{{ post.title }}</title>
+        <link>{{ route('post.single', [post.created_at|date('Y'), post.created_at|date('m'), post.created_at|date('d'), post.slug]) }}</link>
+        <description>{{post.excerpt}}</description>
+    </item>
+
+    {% endfor %}
+</rss>

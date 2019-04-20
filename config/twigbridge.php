@@ -198,7 +198,8 @@ return [
             'setting',
             'storage',
             'json_decode',
-            'menu'
+            'menu',
+            'env'
         ],
 
         /*

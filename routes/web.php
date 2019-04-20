@@ -25,6 +25,13 @@ Route::domain(env('APP_BLOG_HOST'))->group(function () {
         $posts = Post::where('status', '=', 'publish')->paginate();
         return view('post.index', compact('posts'));
     })->name('post.index');
+
+    Route::get('/blog/feed', function () {
+        $posts = Post::where('status', '=', 'publish')->paginate();
+        return response()
+                ->view('post.feed', compact('posts'), 200)
+                ->header('Content-Type', 'text/xml');
+    })->name('feed');
 });
 
 Route::domain(env('APP_MAIN_HOST'))->group(function () {

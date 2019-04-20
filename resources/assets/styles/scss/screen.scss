@@ -373,3 +373,7 @@ cite, em {
 code, pre {
     font: $font-size-base $code-font;
 }
+
+main {
+    min-height: 56vh;
+}
