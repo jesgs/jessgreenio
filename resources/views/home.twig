@@ -33,17 +33,6 @@
             <h2 class="module__lead__header">About</h2>
             <div class="module__lead__text col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">I&apos;m a highly motivated programmer/web developer with extensive experience in the industry. I&apos;m committed to building websites that conform to web accessibility and usability standards, while maintaining visual and aesthetic appeal.</div>
         </div>
-        <div class="show-md row">
-            <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
-                <h2 class="module__lead module__lead__header">
-                    <label class="resume__handle" for="expand"><i class="fas fa-chevron-down"></i></label>
-                </h2>
-                <input type="checkbox" id="expand">
-                <div class="module__lead__text resume">
-                    {{Markdown.convertToHtml(resume.body)|raw}}
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 <section id="contact" class="js-scroll-element row module module--half module__contact">
@@ -60,6 +49,14 @@
             <div class="col-md-offset-2 col-md-4">
                 <h4>{{setting('site.available_for_work')|raw}}</h4>
                 {{ setting('site.available_message')|raw }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <div class="module__lead row">
+                    <h4 class="module__lead__header">Contact Me</h4>
+                </div>
+                {% include 'partials/_contact-form.twig' %}
             </div>
         </div>
     </div>

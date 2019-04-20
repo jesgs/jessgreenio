@@ -1,0 +1,29 @@
+
+<form class="form-group" action="{{ route('sendemail') }}" method="post">
+    {{ csrf_field() }}
+
+    {% if session('message') %}
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+    {% endif %}
+
+    <div class="form-input">
+        <label for="input-contactname"><span class="required">*</span>Name</label>
+        <input type="text" name="name" id="contact-name" required aria-required="true">
+    </div>
+
+    <div class="form-input">
+        <label for="input-contactemail"><span class="required">*</span>Email</label>
+        <input type="email" name="email" id="input-contactemail" required aria-required="true">
+    </div>
+
+    <div class="form-input">
+        <label for="input-contactmessage"><span class="required">*</span>Message</label>
+        <textarea name="message" id="input-contactmessage" required aria-required="true"></textarea>
+    </div>
+
+    <div class="form-input">
+        <button type="submit">Send</button>
+    </div>
+</form>

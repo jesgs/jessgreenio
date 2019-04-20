@@ -45,5 +45,7 @@ Route::domain(env('APP_MAIN_HOST'))->group(function () {
     Route::get('portfolio/{item}', function(Portfolio $item) {
         return view('portfolio.single', ['item' => $item]);
     })->name('portfolio.single');
+
+    Route::post('/contact', 'ContactController@sendEmail')->name('sendemail');
 });
 
