@@ -9,9 +9,18 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://use.typekit.net/laq0noo.css" />
     <link rel="stylesheet" href="{{mix('assets/styles/screen.css')}}" media="all" />
-
+    <link rel="stylesheet" href="{{asset('assets/styles/vendor/solarized-light.css')}}">
+    <script src="{{asset('assets/scripts/vendor/highlight.pack.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script data-main="assets/scripts" src="{{mix('assets/scripts/frontend.js')}}"></script>
+    <script type="application/javascript">
+        (function ($) {
+            $(function () {
+                hljs.initHighlightingOnLoad();
+            });
+        })(jQuery);
+    </script>
+
 </head>
 <body>
 <div class="container">

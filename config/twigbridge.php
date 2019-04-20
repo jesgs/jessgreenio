@@ -199,7 +199,8 @@ return [
             'storage',
             'json_decode',
             'menu',
-            'env'
+            'env',
+            'asset'
         ],
 
         /*
