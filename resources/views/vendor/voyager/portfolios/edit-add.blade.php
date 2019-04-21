@@ -79,12 +79,12 @@
                                         @endforeach
                                     </div>
                                     @else
-                                        @if ($row->field !== 'deleted_at')
-                                        <div class="form-group">
-                                            <label for="datetime_{{$row->field}}" class="control-label">{{ $row->display_name }}</label>
-                                            <input type="datetime-local" class="form-control" id="datetime_{{$row->field}}" name="{{$row->field}}" value="@if ($dataTypeContent->{$row->field} === null){{date('Y-m-d\TH:i:s')}}@else{{$dataTypeContent->{$row->field}->format('Y-m-d\TH:i:s')}}@endif" />
-                                        </div>
-                                        @endif
+{{--                                        @if ($row->field !== 'deleted_at')--}}
+{{--                                        <div class="form-group">--}}
+{{--                                            <label for="datetime_{{$row->field}}" class="control-label">{{ $row->display_name }}</label>--}}
+{{--                                            <input type="datetime-local" class="form-control" id="datetime_{{$row->field}}" name="{{$row->field}}" value="@if ($dataTypeContent->{$row->field} === null){{date('Y-m-d\TH:i:s')}}@else{{$dataTypeContent->{$row->field}->format('Y-m-d\TH:i:s')}}@endif" />--}}
+{{--                                        </div>--}}
+{{--                                        @endif--}}
                                     @endif
                                 @endif
                             @endforeach
