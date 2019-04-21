@@ -11,6 +11,11 @@ html {
     padding: 0;
     font: $font-size-base $base-font;
     line-height: 1.5;
+
+    &.blog {
+        font-size: 16px;
+    }
+
 }
 /**
  * Base font size: #{$font-size-base}<br />
@@ -93,31 +98,52 @@ h, .h {
         line-height: 1;
         color: shade($color-accent-01, 75%);
         margin: 0 0 0.5em;
+        .blog & {
+            line-height: 1.2;
+        }
     }
 
     &1 {
         font-size: $font-size-xxl;
+        .blog & {
+            font-size: $font-size-xl;
+        }
     }
 
     &2 {
         font-size: $font-size-xl;
+        .blog & {
+            font-size: $font-size-l;
+        }
     }
 
     &3 {
         font-size: $font-size-l;
         margin-bottom: 20px;
+        .blog & {
+            font-size: $font-size-base;
+        }
     }
 
     &4 {
         font-size: $font-size-base;
+        .blog & {
+            font-size: $font-size-sm;
+        }
     }
 
     &5 {
         font-size: $font-size-sm;
+        .blog & {
+            font-size: $font-size-xs;
+        }
     }
 
     &6 {
         font-size: $font-size-xs;
+        .blog & {
+            font-size: $font-size-xxs;
+        }
     }
 
     &4, &5, &6 {
@@ -371,7 +397,7 @@ cite, em {
 }
 
 code, pre {
-    font: $font-size-base $code-font;
+    font: $font-size-sm $code-font;
 }
 
 main {
