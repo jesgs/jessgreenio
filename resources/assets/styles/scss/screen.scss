@@ -9,6 +9,8 @@
 html {
     margin: 0;
     padding: 0;
+    font: $font-size-base $base-font;
+    line-height: 1.5;
 }
 /**
  * Base font size: #{$font-size-base}<br />
@@ -20,8 +22,6 @@ html {
  * @color {#{$text-color}} Text/Foreground color - Global Styles.Body Styles
  */
 body {
-    font: $font-size-base $base-font;
-    line-height: 1.5;
     background-color: $background-color;
     color: $text-color;
     margin: 0;
