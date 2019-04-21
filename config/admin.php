@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'email' => 'ardath+messages@psy-dreamer.com',
-    'name' => 'Jess Green',
+    'email' => 'hello+messages@jessgreen.io',
+    'name' => 'JessGreen.io Delivery',
 ];
