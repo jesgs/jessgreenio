@@ -197,7 +197,11 @@ return [
             'mix',
             'setting',
             'storage',
-            'json_decode'
+            'json_decode',
+            'menu',
+            'env',
+            'asset',
+            'get_adjacent_post_link'
         ],
 
         /*

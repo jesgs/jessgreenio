@@ -1,0 +1,28 @@
+{% include 'post/globals/_header.twig' %}
+
+<section class="article-listing col-md-8 col-md-offset-2">
+    <article class="entry">
+        <h2 class="entry__title"><a href="{{ route('post.single', [post.created_at|date('Y'), post.created_at|date('m'), post.created_at|date('d'), post.slug])}}" class="entry__bookmark" rel="bookmark">{{post.title}}</a></h2>
+        <p class="entry__content">
+            {{Markdown.convertToHtml(post.body)|raw}}
+        </p>
+        <div class="entry__meta">{{post.created_at|date("F jS Y \\@ g:ia")}}</div>
+    </article>
+    <ul class="article-listing__navigation row">
+        {% set prevLink = get_adjacent_post_link(post, true) %}
+        {% if prevLink %}
+        <li class="pull-left">
+            &laquo; {{ prevLink|raw }}
+        </li>
+        {% endif %}
+
+        {% set nextLink = get_adjacent_post_link(post, false) %}
+        {% if nextLink %}
+            <li class="pull-right">
+                {{ nextLink|raw }} &raquo;
+            </li>
+        {% endif %}
+    </ul>
+</section>
+
+{% include 'post/globals/_footer.twig' %}

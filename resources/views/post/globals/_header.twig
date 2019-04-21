@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JesGs | Jess G's Blog</title>
+
+    <link rel="alternate" type="application/rss+xml" href="{{route('feed')}}" title="JesGs.com News feed" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.typekit.net/laq0noo.css" />
+    <link rel="stylesheet" href="{{mix('assets/styles/screen.css')}}" media="all" />
+    <link rel="stylesheet" href="{{asset('assets/styles/vendor/solarized-light.css')}}">
+    <script src="{{asset('assets/scripts/vendor/highlight.pack.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script data-main="assets/scripts" src="{{mix('assets/scripts/frontend.js')}}"></script>
+    <script type="application/javascript">
+        (function ($) {
+            $(function () {
+                hljs.initHighlightingOnLoad();
+            });
+        })(jQuery);
+    </script>
+
+</head>
+<body>
+<div class="container">
+    <header class="main-header main-header--blog row">
+        <div class="col-md-8 col-md-offset-1">
+            <a href="/" rel="index"><img src="{{mix('assets/images/logo.png')}}" class="main-header__logo" /></a>
+            <h1 class="col-inline">
+                Jess G's Blog
+                <small>Tutorials and Random Thoughts</small>
+            </h1>
+        </div>
+    </header>
+    <main class="row">

@@ -1,0 +1,63 @@
+#expand {
+    opacity: 0;
+    height: 0;
+
+    &:checked ~ .resume {
+        overflow: visible;
+        max-height: 155rem;
+        transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
+@keyframes pulse {
+    from {
+        opacity: 0.8;
+    }
+
+    to {
+        opacity: 0.5;
+    }
+}
+
+.resume {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.8s cubic-bezier(0, 0, 0.2, 1);
+    font-size: $font-size-base;
+
+    &__handle {
+        cursor: pointer;
+        display: inline-block;
+        opacity: 0.8;
+        &:hover {
+            opacity: 0.5;
+            animation-duration: 1s;
+            animation-name: pulse;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1em;
+    }
+
+    a {
+        &:link {
+            color: shade($color-base-0, 25%);
+        }
+    }
+
+    ul:first-of-type {
+        @extend .hlist;
+        text-align: center;
+        margin-bottom: 20px !important;
+    }
+}

@@ -1,11 +1,17 @@
 {
     "/assets/scripts/frontend.js": "/assets/scripts/frontend.js",
     "/assets/styles/screen.css": "/assets/styles/screen.css",
-    "/assets/styles/print.css": "/assets/styles/print.css",
     "/assets/scripts/frontend.js.map": "/assets/scripts/frontend.js.map",
     "/assets/styles/screen.css.map": "/assets/styles/screen.css.map",
-    "/assets/styles/print.css.map": "/assets/styles/print.css.map",
-    "/images/browser-ui-large_bottom.png": "/images/browser-ui-large_bottom.png",
-    "/images/browser-ui-large_top.png": "/images/browser-ui-large_top.png",
-    "/images/browser-ui-large.png": "/images/browser-ui-large.png"
+    "/assets/images/about-bg.png": "/assets/images/about-bg.png",
+    "/assets/images/cars.png": "/assets/images/cars.png",
+    "/assets/images/contact-bg.png": "/assets/images/contact-bg.png",
+    "/assets/images/github-alt.png": "/assets/images/github-alt.png",
+    "/assets/images/github.png": "/assets/images/github.png",
+    "/assets/images/intro-bg.png": "/assets/images/intro-bg.png",
+    "/assets/images/linkedin.png": "/assets/images/linkedin.png",
+    "/assets/images/logo.png": "/assets/images/logo.png",
+    "/assets/images/rss.png": "/assets/images/rss.png",
+    "/assets/images/stackoverflow.png": "/assets/images/stackoverflow.png",
+    "/assets/images/work-bg.png": "/assets/images/work-bg.png"
 }

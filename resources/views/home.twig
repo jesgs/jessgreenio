@@ -1,17 +1,66 @@
 {% include 'globals/_header.twig' %}
 
-<div class="row lead gradient">
-    <div class="col-md-12">
-        <h2 class="lead__header">{{setting('site.lead_title')|raw}}</h2>
-        <div class="lead__text col-md-4 col-md-offset-4 col-block">{{setting('site.lead_description')|raw}}</div>
-        <div class="weather-sunny"></div>
+<section id="intro" class="js-scroll-element row module module__intro module--collapsed">
+    <div class="container">
+        <div class="row">
+            <img src="assets/images/logo.png" alt="" class="module__intro__logo" />
+        </div>
+        <div class="row">
+            <div class="module__lead module__intro__lead col-md-offset-3 col-md-6 col-xs-10 col-xs-offset-1">
+                <div class="module__lead__text module__lead__text--intro ">Hello, my name is</div>
+                <h2 class="module__lead__header module__lead__header--intro">Jess Green</h2>
+                <div class="module__lead__text module__lead__text--intro">{{ setting('site.lead_description')|raw }}</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6 col-xs-10 col-xs-offset-1">
+                {{menu('Social Media', 'partials/_social-nav')|raw}}
+            </div>
+        </div>
     </div>
-</div>
+</section>
+<section id="work" class="js-scroll-element row module module--half module__work">
+    <div class="container">
+        <div class="module__lead row">
+            <h2 class="module__lead__header">Work</h2>
+            <div class="module__lead__text col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">I&apos;ve worked for over {{ "now"|date('Y') - 2010 }} years in the industry, building user-friendly websites. I&apos;ll work with you as the client to discover what your web design/development needs are.</div>
+        </div>
+    </div>
+</section>
+<section id="about" class="js-scroll-element row module module--quarter module__about">
+    <div class="container">
+        <div class="module__lead row">
+            <h2 class="module__lead__header">About</h2>
+            <div class="module__lead__text col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">I&apos;m a highly motivated programmer/web developer with extensive experience in the industry. I&apos;m committed to building websites that conform to web accessibility and usability standards, while maintaining visual and aesthetic appeal.</div>
+        </div>
+    </div>
+</section>
+<section id="contact" class="js-scroll-element row module module--half module__contact">
+    <div class="container">
+        <div class="module__lead row">
+            <h2 class="module__lead__header">Contact</h2>
+            <div class="module__lead__text col-md-8 col-md-offset-2">Thanks for stopping by!</div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-1 col-md-4 vm__xs--bottom-5">
+                <h4>Elsewhere On The Web</h4>
+                {{menu('Social Media', 'partials/_social-nav')|raw}}
+            </div>
+            <div class="col-md-offset-2 col-md-4">
+                <h4>{{setting('site.available_for_work')|raw}}</h4>
+                {{ setting('site.available_message')|raw }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <div class="module__lead row">
+                    <h4 class="module__lead__header">Contact Me</h4>
+                </div>
+                {% include 'partials/_contact-form.twig' %}
+            </div>
+        </div>
+    </div>
+</section>
 
-<div class="row portfolio">
-{% for item in items %}
-    {% include 'portfolio/_item.twig' %}
-{% endfor %}
-</div>
 
 {% include 'globals/_footer.twig' %}

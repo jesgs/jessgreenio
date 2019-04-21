@@ -1,0 +1,10 @@
+<ul class="hlist hlist--icon-list">
+    {% for item in items %}
+        <li>
+            <a href="{{ item.url }}" target="_blank" rel="nofollow noopener">
+                <i class="fab {{ item.icon_class }} hlist__icon hlist__icon--x3"></i>
+                <span class="hlist__label--hidden">{{ item.title }}</span>
+            </a>
+        </li>
+    {% endfor %}
+</ul>

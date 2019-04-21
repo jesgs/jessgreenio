@@ -1,0 +1,17 @@
+{% include 'post/globals/_header.twig' %}
+
+<section class="article-listing col-md-8 col-md-offset-2">
+
+    {% for post in posts %}
+        <article class="entry">
+            <h2 class="entry__title"><a href="{{ route('post.single', [post.create_at|date('Y'), post.create_at|date('m'), post.create_at|date('d'), post.slug])}}" class="entry__bookmark" rel="bookmark">{{post.title}}</a></h2>
+            <p class="entry__summary">
+                {{ post.excerpt }}
+            </p>
+            <div class="entry__meta">{{post.created_at|date("F jS Y \\@ g:ia")}}</div>
+        </article>
+    {% endfor %}
+    {{ posts.links('vendor/pagination/pagination')|raw }}
+</section>
+
+{% include 'post/globals/_footer.twig' %}
