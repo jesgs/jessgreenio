@@ -19,14 +19,19 @@
         </div>
     </div>
 </section>
+
 <section id="work" class="js-scroll-element row module module--half module__work">
     <div class="container">
         <div class="module__lead row">
             <h2 class="module__lead__header">Work</h2>
             <div class="module__lead__text col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">I&apos;ve worked for over {{ "now"|date('Y') - 2010 }} years in the industry, building user-friendly websites. I&apos;ll work with you as the client to discover what your web design/development needs are.</div>
         </div>
+        <div class="row">
+            {% include 'partials/_portfolio-item.twig' with {items: portfolio} %}
+        </div>
     </div>
 </section>
+
 <section id="about" class="js-scroll-element row module module--quarter module__about">
     <div class="container">
         <div class="module__lead row">
@@ -35,6 +40,7 @@
         </div>
     </div>
 </section>
+
 <section id="contact" class="js-scroll-element row module module--half module__contact">
     <div class="container">
         <div class="module__lead row">

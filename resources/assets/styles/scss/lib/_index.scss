@@ -1,3 +1,7 @@
+@import "/Users/jess/Development/jessgreen-io/node_modules/node-normalize-scss/_normalize.scss";
+@import "/Users/jess/Development/jessgreen-io/node_modules/bourbon/core/_bourbon.scss";
+@import "/Users/jess/Development/jessgreen-io/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "/Users/jess/Development/jessgreen-io/node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
 @import "variables";
 @import "colors";
 @import "mixins/vendor/_imagehelper";
@@ -9,4 +13,6 @@
 @import "modules/forms";
 @import "modules/homepage";
 @import "modules/blog";
-@import "modules/resume";
+//@import "modules/portfolio";
+//@import "modules/bootstrap-carousel";
+//@import "modules/resume";

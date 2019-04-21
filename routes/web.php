@@ -41,11 +41,12 @@ Route::domain(env('APP_MAIN_HOST'))->group(function () {
     });
 
     Route::get('/', function () {
-        $resume = \TCG\Voyager\Models\Page::whereSlug('resume')->first();
-        return view('home', ['resume' => $resume]);
+        $portfolio = Portfolio::query()->orderBy('order')->paginate(6);
+        return view('home', compact('portfolio'));
     });
 
     Route::get('/{page}', function (Page $page) {
+
         return view('page', ['item' => $page]);
     });
 
