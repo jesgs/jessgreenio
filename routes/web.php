@@ -22,12 +22,12 @@ Route::domain(env('APP_BLOG_HOST'))->group(function () {
     })->name('post.single');
 
     Route::get('/', function () {
-        $posts = Post::where('status', '=', 'publish')->paginate();
+        $posts = Post::where('status', '=', 'publish')->orderBy('created_at', 'desc')->paginate();
         return view('post.index', compact('posts'));
     })->name('post.index');
 
     Route::get('/blog/feed', function () {
-        $posts = Post::where('status', '=', 'publish')->paginate();
+        $posts = Post::where('status', '=', 'publish')->orderBy('created_at', 'desc')->paginate();
         return response()
                 ->view('post.feed', compact('posts'), 200)
                 ->header('Content-Type', 'text/xml');
