@@ -7,13 +7,6 @@
         <a href="{{ paginator.previousPageUrl() }}">&laquo; Prev</a>
     {% endif %}
     </li>
-
-{#    <li>#}
-{#    {% for element in elements %}#}
-{#        {{ dump(element) }}#}
-{#    {% endfor %}#}
-{#    </li>#}
-
     <li class="pull-right">
     {% if (paginator.hasMorePages()) %}
         <a href="{{paginator.nextPageUrl()}}">Next &raquo;</a>

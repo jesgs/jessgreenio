@@ -200,7 +200,8 @@ return [
             'json_decode',
             'menu',
             'env',
-            'asset'
+            'asset',
+            'get_adjacent_post_link'
         ],
 
         /*

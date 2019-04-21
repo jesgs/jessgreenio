@@ -6,8 +6,23 @@
         <p class="entry__content">
             {{Markdown.convertToHtml(post.body)|raw}}
         </p>
-        <div class="entry__meta">{{post.published_at|date("F jS Y \\@ g:ia")}}</div>
+        <div class="entry__meta">{{post.created_at|date("F jS Y \\@ g:ia")}}</div>
     </article>
+    <ul class="article-listing__navigation row">
+        {% set prevLink = get_adjacent_post_link(post, true) %}
+        {% if prevLink %}
+        <li class="pull-left">
+            &laquo; {{ prevLink|raw }}
+        </li>
+        {% endif %}
+
+        {% set nextLink = get_adjacent_post_link(post, false) %}
+        {% if nextLink %}
+            <li class="pull-right">
+                {{ nextLink|raw }} &raquo;
+            </li>
+        {% endif %}
+    </ul>
 </section>
 
 {% include 'post/globals/_footer.twig' %}
