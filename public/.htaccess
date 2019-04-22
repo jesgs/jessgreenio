@@ -5,6 +5,10 @@
 
     RewriteEngine On
 
+    # Handle naked to www redirect
+    RewriteCond %{HTTP_HOST} !^www\. [NC]
+    RewriteRule ^ http://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
