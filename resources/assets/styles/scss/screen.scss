@@ -322,36 +322,74 @@ h, .h {
 .visible-sm,
 .visible-md,
 .visible-lg {
-    display: none !important;
+    display: none;
 }
 
 .visible-xxs {
-    @media (max-width: 479px) {
-        display: block !important;
-    }
+    display: block;
 }
 
 .visible-xs {
-    @media (min-width: 480px) and (max-width: 767px) {
-        display: block !important;
+    @media (min-width: 480px) {
+        display: block;
     }
 }
 
 .visible-sm {
-    @media (min-width: 768px) and (max-width: 991px) {
-        display: block !important;
+    @media (min-width: 768px) {
+        display: block;
     }
 }
 
 .visible-md {
-    @media (min-width: 992px) and (max-width: 1199px) {
-        display: block !important;
+    @media (min-width: 992px) {
+        display: block;
     }
 }
 
 .visible-lg {
     @media (min-width: 1200px) {
-        display: block !important;
+        display: block;
+    }
+}
+
+.visible {
+    &-flex {
+        &-xs,
+        &-sm,
+        &-md,
+        &-lg {
+            display: none;
+        }
+
+        &-xxs {
+            display: flex;
+        }
+
+        &-xs {
+            @include media-xs-min() {
+                display: flex;
+            }
+        }
+
+        &-sm {
+            @include media-sm-min() {
+                display: flex;
+            }
+        }
+
+        &-md {
+            @include media-md-min() {
+                display: flex;
+            }
+
+        }
+
+        &-lg {
+            @include media-lg-min() {
+                display: flex;
+            }
+        }
     }
 }
 
