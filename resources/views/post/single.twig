@@ -1,6 +1,6 @@
 {% include 'post/globals/_header.twig' %}
 
-<section class="article-listing col-md-8 col-md-offset-2">
+<section class="article-listing col-md-6 col-md-offset-2">
     <article class="entry">
         <h2 class="entry__title"><a href="{{ route('post.single', [post.created_at|date('Y'), post.created_at|date('m'), post.created_at|date('d'), post.slug])}}" class="entry__bookmark" rel="bookmark">{{post.title}}</a></h2>
         <p class="entry__content">
