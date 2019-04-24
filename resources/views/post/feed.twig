@@ -3,6 +3,8 @@
     <title>JesGs.com</title>
     <link>https://{{ env('APP_BLOG_HOST') }}</link>
     <description>The blog of Twin Cities web developer Jessica Green</description>
+    <lastBuildDate>{{posts[0].created_at|date('r')}}</lastBuildDate>
+    <language>en-US</language>
     <channel>
     {% for post in posts %}
     <item>
@@ -10,8 +12,8 @@
         <title>{{ post.title }}</title>
         <pubDate>{{ post.created_at|date('r') }}</pubDate>
         <link>{{ route('post.single', [post.created_at|date('Y'), post.created_at|date('m'), post.created_at|date('d'), post.slug]) }}</link>
-        <description>{{post.excerpt}}</description>
-        <author>Jess Green</author>
+        <description><![CDATA[{{post.excerpt}}]]></description>
+        <author>hello@jessgreen.io</author>
     </item>
     {% endfor %}
     </channel>
