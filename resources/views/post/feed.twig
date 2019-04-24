@@ -1,16 +1,18 @@
 <?xml version="1.0" ?>
 <rss version="2.0">
+    <title>JesGs.com</title>
+    <link>https://{{ env('APP_BLOG_HOST') }}</link>
+    <description>The blog of Twin Cities web developer Jessica Green</description>
     <channel>
-        <title>JesGs.com</title>
-        <link>{{ env('APP_BLOG_HOST') }}</link>
-        <description>The blog of Twin Cities web developer Jessica Green</description>
-    </channel>
     {% for post in posts %}
     <item>
+        <guid>{{ route('post.single', [post.created_at|date('Y'), post.created_at|date('m'), post.created_at|date('d'), post.slug]) }}</guid>
         <title>{{ post.title }}</title>
+        <pubDate>{{ post.created_at|date('r') }}</pubDate>
         <link>{{ route('post.single', [post.created_at|date('Y'), post.created_at|date('m'), post.created_at|date('d'), post.slug]) }}</link>
         <description>{{post.excerpt}}</description>
+        <author>Jess Green</author>
     </item>
-
     {% endfor %}
+    </channel>
 </rss>
