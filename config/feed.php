@@ -18,7 +18,7 @@ return [
              */
             'url' => '/blog/feed',
 
-            'title' => 'My feed',
+            'title' => 'JesGs.com | Blog of Twin Cities Web Developer/Designer Jess Green',
 
             /*
              * The view that will render the feed.
