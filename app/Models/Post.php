@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use TCG\Voyager\Traits\Translatable;
+use Spatie\Feed\Feedable;
+use Spatie\Feed\FeedItem;
 
 
 /**
@@ -47,7 +49,7 @@ use TCG\Voyager\Traits\Translatable;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Post withTranslations($locales = null, $fallback = true)
  * @mixin \Eloquent
  */
-class Post extends Model
+class Post extends Model implements Feedable
 {
     use Translatable;
 
@@ -72,6 +74,24 @@ class Post extends Model
     ];
 
     protected $guarded = [];
+
+
+    public function toFeedItem()
+    {
+        return FeedItem::create()
+                ->id($this->id)
+                ->title($this->title)
+                ->summary($this->excerpt)
+                ->updated($this->updated_at)
+                ->link("/{$this->slug}")
+                ->author('Jess G.');
+    }
+
+
+    public static function getFeedItems()
+    {
+        return Post::all();
+    }
 
 
     public function getAuthorIdAttribute($value)
